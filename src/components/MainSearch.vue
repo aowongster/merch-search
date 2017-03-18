@@ -7,7 +7,7 @@
     <ul>
       <input v-model="searchTerms"
       text="text"
-      placeholder="Enter Search Terms Here"/>
+      placeholder="Enter search terms here"/>
     </ul>
     <ul>
       <button v-on:click="searchShirts"
@@ -16,26 +16,46 @@
       class="button-blue" type="button"
       name="button">Brand Search</button>
     </ul>
-      <button v-on:click="searchAll"
-      class="button-blue" type="button"
-      name="button">Top Shirts</button>
-    <ul>
 
-    </ul>
 
     <h2>More Links</h2>
+    <ul>
+      <li>
+        <a v-on:click="searchAll" href="#">All Merch Shirts</a>
+      </li>
+      <li><a href="https://twitter.com/search-home?lang=en" target="_blank">
+        Trending on Twitter</a></li>
+    </ul>
+
+    <footer>
+      <!-- <p>© Alistair Wong</p> -->
+    </footer>
 
   </div>
 </template>
 
 <script>
+// import axios from 'axios'
+
 export default {
   name: 'main-search',
   data () {
     return {
       msg: 'Welcome to MerchSearch',
-      searchTerms: ''
+      searchTerms: '',
+      trending: ''
     }
+  },
+  mounted () {
+    // let trendingUrl = 'https://twitter.com/i/trends?k=&lang=en&pc=true&show_context=false&src=search-home'
+    // axios.get(trendingUrl)
+    //   .then((response) => {
+    //     this.trending = JSON.parse(response)
+    //     console.log(response)
+    //   })
+    //   .catch((error) => {
+    //     console.log(error)
+    //   })
   },
   methods: {
     searchShirts () {
