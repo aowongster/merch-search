@@ -10,11 +10,17 @@
       placeholder="Enter search terms here"/>
     </ul>
     <ul>
+
       <button v-on:click="searchShirts"
       class="button-blue" type="button" name="button">Keyword Search</button>
+
       <button v-on:click="searchBrands"
       class="button-blue" type="button"
       name="button">Brand Search</button>
+
+      <button v-on:click="searchTrademarkia"
+      class="button-blue" type="button"
+      name="button">Trademarkia Search</button>
     </ul>
 
 
@@ -68,6 +74,12 @@ export default {
       let searchTerms = encodeURI(this.searchTerms)
       let url =
       `https://www.amazon.com/s/ref=as_li_ss_tl?ie=UTF8&node=7141123011&field-brandtextbin=${searchTerms}&linkCode=ll2&tag=brand-search0c-20&linkId=0ef7ec36c6c8e26e1e0c7fdbf45e5221`
+      window.open(url, '_blank')
+    },
+    searchTrademarkia () {
+      let searchTerms = encodeURI(this.searchTerms)
+      let url =
+      `http://www.trademarkia.com/trademarks-search.aspx?tn=${searchTerms}`
       window.open(url, '_blank')
     },
     searchAll () {
