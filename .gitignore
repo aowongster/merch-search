@@ -1,8 +1,10 @@
 .DS_Store
 node_modules/
 dist/*
+static/*
 npm-debug.log
 yarn-error.log
 test/unit/coverage
 test/e2e/reports
 selenium-debug.log
+gh-page.zip
